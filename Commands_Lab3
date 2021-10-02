@@ -1,0 +1,111 @@
+Last login: Fri Oct  1 08:49:32 on console
+(base) ➜  ~ cd Desktop/MDS/DATA\ 541\ Assignment 
+(base) ➜  DATA 541 Assignment ls
+541_lab3                 LAB1                     LAB2
+DATA541_LAb3_GitCommands LAB1.zip                 Lab3
+(base) ➜  DATA 541 Assignment ls
+541_lab3                 LAB1.zip                 Lab3
+DATA541_LAb3_GitCommands LAB2
+LAB1                     LAB3_541
+(base) ➜  DATA 541 Assignment cd LAB3_541 
+(base) ➜  LAB3_541 ls
+
+Part2: (1.1) Clone your Lab 3 repository to your local machine
+
+
+(base) ➜  LAB3_541 git clone https://github.com/aishwaryasharma10/DATA541_Lab3.git
+Cloning into 'DATA541_Lab3'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+(base) ➜  LAB3_541 ls
+DATA541_Lab3
+
+Part2: (1.2) Navigate into the cloned repository folder
+
+(base) ➜  LAB3_541 cd DATA541_Lab3
+
+
+Part2: (1.3) Create a new Git branch called Markdown (1.4) Use checkout to move to the Markdown branch. You may use the -b flag to create and checkout a branch at the same time. 
+
+
+(base) ➜  DATA541_Lab3 git:(main) git checkout -b Markdown
+Switched to a new branch 'Markdown'
+
+
+Part2: (1.5) Check the status of the current repository and confirm you are on the Markdown branch
+
+(base) ➜  DATA541_Lab3 git:(Markdown) git status
+On branch Markdown
+nothing to commit, working tree clean
+
+Part2: (1.6) Add and commit your lab3_q1.md and lab3_q2.md files to the current branch.
+
+(base) ➜  DATA541_Lab3 git:(Markdown) git add -A
+(base) ➜  DATA541_Lab3 git:(Markdown) ✗ git commit -m "Submitting markdown for Lab3"
+[Markdown c6d3535] Submitting markdown for Lab3
+ 2 files changed, 68 insertions(+)
+ create mode 100644 lab3_q1.md
+ create mode 100644 lab3_q2.md
+(base) ➜  DATA541_Lab3 git:(Markdown) git status
+On branch Markdown
+nothing to commit, working tree clean
+
+Part2: (1.7) Use the push command with the following flags -u origin Markdown to push the Markdown branch to GitHub
+
+(base) ➜  DATA541_Lab3 git:(Markdown) git push -u origin Markdown
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.67 KiB | 1.67 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'Markdown' on GitHub by visiting:
+remote:      https://github.com/aishwaryasharma10/DATA541_Lab3/pull/new/Markdow
+remote: 
+To https://github.com/aishwaryasharma10/DATA541_Lab3.git
+ * [new branch]      Markdown -> Markdown
+Branch 'Markdown' set up to track remote branch 'Markdown' from 'origin'.
+
+
+Part2: (2.1) Use checkout to move back to the master branch of your Git repository.
+
+
+(base) ➜  DATA541_Lab3 git:(Markdown) git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Part2: (2.2) Merge your Markdown branch into your master branch. The syntax for the merge command is git merge branchName. 
+
+(base) ➜  DATA541_Lab3 git:(main) ✗ git merge Markdown
+Updating 81b7080..c6d3535
+Fast-forward
+ lab3_q1.md | 37 +++++++++++++++++++++++++++++++++++++
+ lab3_q2.md | 31 +++++++++++++++++++++++++++++++
+ 2 files changed, 68 insertions(+)
+ create mode 100644 lab3_q1.md
+ create mode 100644 lab3_q2.md
+
+Part2: (2.3) Perform a push to push the merge up to GitHub.
+
+
+(base) ➜  DATA541_Lab3 git:(main) ✗ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/aishwaryasharma10/DATA541_Lab3.git
+   81b7080..c6d3535  main -> main
+
+Part2: (2.4) Delete your Markdown branch - now that it is merged, it is no longer necessary.
+
+
+(base) ➜  DATA541_Lab3 git:(main) ✗ git push origin --delete Markdown
+To https://github.com/aishwaryasharma10/DATA541_Lab3.git
+ - [deleted]         Markdown
+
+
+Part2: (2.5) Use the git log function to print a short log of your actions. If the -oneline flag doesn't work, try using --pretty=oneline instead. Take a screenshot of the output. 
+
+(base) ➜  DATA541_Lab3 git:(main) ✗ git log --oneline
+
+(base) ➜  DATA541_Lab3 git:(main) ✗ 
